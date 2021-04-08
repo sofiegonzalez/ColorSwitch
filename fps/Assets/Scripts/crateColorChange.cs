@@ -12,8 +12,6 @@ public class crateColorChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         //starting color
         GetComponent<MeshRenderer>().material = start;
     }
@@ -29,7 +27,6 @@ public class crateColorChange : MonoBehaviour
         //new color is the color the gun is set on
         if(newColor == "green"){
             //change object color when shot
-           
             GetComponent<MeshRenderer>().material = green;
         }else if (newColor == "red")
         {
