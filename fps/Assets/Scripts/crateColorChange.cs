@@ -8,6 +8,7 @@ public class crateColorChange : MonoBehaviour
     public Material red;
     public Material blue;
     public Material green;
+    public string currColor;
 
     // Start is called before the first frame update
     void Start()
@@ -28,15 +29,19 @@ public class crateColorChange : MonoBehaviour
         if(newColor == "green"){
             //change object color when shot
             GetComponent<MeshRenderer>().material = green;
-        }else if (newColor == "red")
+            currColor = "green";
+        }
+        else if (newColor == "red")
         {
             
             GetComponent<MeshRenderer>().material = red;
+            currColor = "red";
         }
         else
         {
             
             GetComponent<MeshRenderer>().material = blue;
+            currColor = "blue";
         }
 
     }

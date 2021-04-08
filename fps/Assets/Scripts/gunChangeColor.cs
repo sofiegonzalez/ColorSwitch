@@ -38,21 +38,21 @@ public class gunChangeColor : MonoBehaviour
                 color = "blue";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = blue;
-                Debug.Log("new color blue");
+                //Debug.Log("new color blue");
             }
             else if(color == "blue")
             {
                 color = "green";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = green;
-                Debug.Log("new color green");
+                //Debug.Log("new color green");
             }
             else
             {
                 color = "red";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = red;
-                Debug.Log("new color red");
+                //Debug.Log("new color red");
             }
             color_change.Play();
         }
@@ -68,6 +68,7 @@ public class gunChangeColor : MonoBehaviour
                 if(targetDistance < allowedRange)
                 {
                     //call ChangeColor funtion in crate script to change colro of crate
+                    //have a check if pointed at a crate or not
                     shot.transform.SendMessage("ChangeColor", color);
                     
                 }
