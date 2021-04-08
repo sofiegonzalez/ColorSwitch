@@ -13,6 +13,7 @@ public class gunChangeColor : MonoBehaviour
     //start color of gun
     string color = "red";
     public GameObject laser;
+    private AudioSource color_change;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,9 @@ public class gunChangeColor : MonoBehaviour
     {
         //set material to red- start color
         laser.GetComponent<MeshRenderer>().material = red;
+
+        color_change = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -48,8 +52,9 @@ public class gunChangeColor : MonoBehaviour
                 color = "red";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = red;
-                Debug.Log("new color red")
+                Debug.Log("new color red");
             }
+            color_change.Play();
         }
             
         //left click- fire gun

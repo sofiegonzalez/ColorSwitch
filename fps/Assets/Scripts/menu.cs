@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class menu : MonoBehaviour
 {
-
+    private AudioSource start_game;
     //player clicks start button -> level 1 scene loaded
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        start_game = GetComponent<AudioSource>();
+        start_game.Play();
     }
 
     //player clicks exit button -> game quits
