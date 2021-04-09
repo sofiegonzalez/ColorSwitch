@@ -658,6 +658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pressure1: {fileID: 604674558}
   pressure2: {fileID: 186326228}
+  finalPos: {x: -2.01, y: 3.069, z: -19}
   green: {fileID: 2100000, guid: 32219f17fd760124b8e990f88cd3f011, type: 2}
 --- !u!1 &963194225
 GameObject:
@@ -1060,6 +1061,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4356505894331965557, guid: e3b01465c7420134a90659a46816b8c3,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1217846244995943394, guid: e3b01465c7420134a90659a46816b8c3,
         type: 3}
       propertyPath: m_Name
@@ -1083,7 +1089,7 @@ PrefabInstance:
     - target: {fileID: 1217846244995943398, guid: e3b01465c7420134a90659a46816b8c3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.9
+      value: -16.1
       objectReference: {fileID: 0}
     - target: {fileID: 1217846244995943398, guid: e3b01465c7420134a90659a46816b8c3,
         type: 3}
