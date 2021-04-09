@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4760437088018799268}
   - component: {fileID: 4760437088018799269}
   m_Layer: 0
-  m_Name: crate1
+  m_Name: crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,3 +127,4 @@ MonoBehaviour:
   red: {fileID: 2100000, guid: 1aad8cf6bbda8eb409cff72d37c22c92, type: 2}
   blue: {fileID: 2100000, guid: f0b814fdfd691b94abe797e45e1c4993, type: 2}
   green: {fileID: 2100000, guid: 32219f17fd760124b8e990f88cd3f011, type: 2}
+  currColor: 
