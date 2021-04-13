@@ -488,6 +488,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4453383070449059865, guid: 1c2e0a1b6b1a664439ea4ac17f2430c8,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453383070449059865, guid: 1c2e0a1b6b1a664439ea4ac17f2430c8,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.92
+      objectReference: {fileID: 0}
     - target: {fileID: 4453383070449059867, guid: 1c2e0a1b6b1a664439ea4ac17f2430c8,
         type: 3}
       propertyPath: m_Pivot.x
@@ -592,6 +602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453383071012342432, guid: 1c2e0a1b6b1a664439ea4ac17f2430c8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 107
       objectReference: {fileID: 0}
     - target: {fileID: 4453383071500798600, guid: 1c2e0a1b6b1a664439ea4ac17f2430c8,
         type: 3}

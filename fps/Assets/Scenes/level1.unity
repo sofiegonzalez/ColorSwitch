@@ -921,6 +921,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5281100981185355, guid: 1ab113c11fa9e06409a4a65b63b00343, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5281100981185355, guid: 1ab113c11fa9e06409a4a65b63b00343, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5c19ce6dac5fab0449e9fc5ad4aef0c1, type: 3}
     - target: {fileID: 5281102183773052, guid: 1ab113c11fa9e06409a4a65b63b00343, type: 3}
       propertyPath: m_Name
       value: Player
