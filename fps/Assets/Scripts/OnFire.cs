@@ -5,7 +5,10 @@ using UnityEngine;
 public class OnFire : MonoBehaviour
 {
 
-
+    void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {

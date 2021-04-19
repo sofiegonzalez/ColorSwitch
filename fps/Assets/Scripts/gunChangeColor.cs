@@ -22,13 +22,16 @@ public class gunChangeColor : MonoBehaviour
         //set material to red- start color
         laser.GetComponent<MeshRenderer>().material = red;
 
-        color_change = GetComponent<AudioSource>();
         
+
+        color_change = GetComponent<AudioSource>();
+        //laser.transform.localEulerAngles = new Vector3(90, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         //right click- change color
         //continous right click circles through red -> blue -> green
         if (Input.GetMouseButtonDown(1))
