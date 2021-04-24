@@ -70,7 +70,7 @@ public class gunChangeColor : MonoBehaviour
                 targetDistance = shot.distance;
                 if(targetDistance < allowedRange)
                 {
-                    //call ChangeColor funtion in crate script to change colro of crate
+                    //call ChangeColor funtion in crate script to change color of crate
                     //have a check if pointed at a crate or not
                     shot.transform.SendMessage("ChangeColor", color);
                     
