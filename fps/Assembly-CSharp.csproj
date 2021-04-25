@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\level1\pressurePlate.cs" />
      <Compile Include="Assets\Scripts\level1\solution_level1.cs" />
      <Compile Include="Assets\Scripts\level2\fell_off.cs" />
+     <Compile Include="Assets\Scripts\level2\next_level_2.cs" />
      <Compile Include="Assets\Scripts\level2\platform_crate_fall.cs" />
      <Compile Include="Assets\Scripts\level2\platform_player_fall.cs" />
      <Compile Include="Assets\Scripts\level2\solution_level2.cs" />
