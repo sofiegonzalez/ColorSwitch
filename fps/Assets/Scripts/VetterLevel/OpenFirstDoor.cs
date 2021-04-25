@@ -7,8 +7,8 @@ public class OpenFirstDoor : MonoBehaviour
     public GameObject plate;
     
     private pressurePlate p1;
-    private Vector3 openPos = new Vector3(-22.8f, -0.4f, 35.2f);
-    private Vector3 closedPos = new Vector3(-22.8f, -0.4f, 40.2f);
+    private Vector3 openPos = new Vector3(-34.85479f, 15.1f, 8.260815f);
+    private Vector3 closedPos = new Vector3(-34.85479f, 5.20663f, 8.260815f);
 
     private bool isMoving;
     private bool isClosed;
@@ -18,6 +18,7 @@ public class OpenFirstDoor : MonoBehaviour
     {
         p1 = plate.GetComponent<pressurePlate>();
         isMoving = false;
+        isClosed = true;
     }
 
     // Update is called once per frame
@@ -29,22 +30,24 @@ public class OpenFirstDoor : MonoBehaviour
             {
                 if (isClosed)
                 {
+                    Debug.Log("open");
                     isMoving = true;
-                    openDoor();
                     isClosed = false;
+                    openDoor();
                 }
             }
             else
             {
                 if (!isClosed)
                 {
+                    Debug.Log("close");
                     isMoving = true;
                     closeDoor();
                     isClosed = true;
                 }
             }
         }
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
     }
 
     void openDoor()
@@ -73,3 +76,19 @@ public class OpenFirstDoor : MonoBehaviour
         isMoving = false;
     }
 }
+
+//maybe use this for a smooth lerp- coroutine
+/*//move door open
+private IEnumerator SmoothLerp(float time)
+{
+    Vector3 startingPos = transform.position;
+
+    float elapsedTime = 0;
+
+    while (elapsedTime < time)
+    {
+        transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
+        elapsedTime += Time.deltaTime;
+        yield return null;
+    }
+}*/

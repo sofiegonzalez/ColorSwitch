@@ -15,7 +15,7 @@ public class PlatformMovement : MonoBehaviour
     {
         atOne = false;
         isMoving = false;
-        Debug.Log(pos1);
+        //Debug.Log(pos1);
         transform.position = pos1;
     }
 

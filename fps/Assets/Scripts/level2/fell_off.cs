@@ -17,7 +17,7 @@ public class fell_off : MonoBehaviour
         //if player falls, restart level
         if(transform.position.y <= -25)
         {
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 

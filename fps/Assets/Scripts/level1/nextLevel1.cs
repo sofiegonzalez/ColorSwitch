@@ -16,7 +16,7 @@ public class nextLevel1 : MonoBehaviour
     {
         if(transform.position.x <= -2)
         {
-            SceneManager.LoadScene("level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
