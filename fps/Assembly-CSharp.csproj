@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\VetterLevel\OpenFirstDoor.cs" />
      <Compile Include="Assets\Scripts\VetterLevel\PlatformMovement.cs" />
      <Compile Include="Assets\Scripts\level1\crateColorChange.cs" />
+     <Compile Include="Assets\Scripts\level1\fade_in.cs" />
      <Compile Include="Assets\Scripts\level1\nextLevel1.cs" />
      <Compile Include="Assets\Scripts\level1\pressurePlate.cs" />
      <Compile Include="Assets\Scripts\level1\solution_level1.cs" />
