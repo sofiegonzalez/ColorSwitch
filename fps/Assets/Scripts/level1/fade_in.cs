@@ -5,7 +5,7 @@ using System.Collections;
 public class fade_in : MonoBehaviour
 {
     public Text t1;
-    public Text t2;
+    public RawImage t2;
     private int start = 0;
     private int second = 1;
     private int third = 1;
@@ -20,32 +20,11 @@ public class fade_in : MonoBehaviour
         if(start == 0)
         {
             StartCoroutine(fadeIn(2f, t1));
-            second = 0;
-            
+            StartCoroutine(fadeInIm(2f, t2));
+
         }
         
-        if (Input.GetMouseButtonDown(1) && second == 0)
-        {
-            start = 1;
-            StartCoroutine(fadeOut(2f, t1));
-            third = 0;
-        }
 
-        if (third == 0)
-        {
-            StartCoroutine(fadeIn(2f, t2));
-            second = 1;
-            
-            fourth = 0;
-
-        }
-
-        if (Input.GetMouseButtonDown(0) && fourth == 0)
-        {
-            third = 1;
-            StartCoroutine(fadeOut(2f, t2));
-
-        }
 
     }
 
@@ -54,6 +33,18 @@ public class fade_in : MonoBehaviour
     public IEnumerator fadeIn(float t, Text i)
     {
        
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
+        while (i.color.a < 1.0f)
+        {
+            i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a + (Time.deltaTime / t));
+            yield return null;
+        }
+        start = 1;
+    }
+
+    public IEnumerator fadeInIm(float t, RawImage i)
+    {
+
         i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
         while (i.color.a < 1.0f)
         {
