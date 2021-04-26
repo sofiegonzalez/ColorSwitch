@@ -21,28 +21,29 @@ public class fade_in : MonoBehaviour
         {
             StartCoroutine(fadeIn(2f, t1));
             second = 0;
-            start = 1;
+            
         }
         
         if (Input.GetMouseButtonDown(1) && second == 0)
         {
+            start = 1;
             StartCoroutine(fadeOut(2f, t1));
-            second = 1;
             third = 0;
         }
 
         if (third == 0)
         {
             StartCoroutine(fadeIn(2f, t2));
-            third = 1;
+            second = 1;
+            
             fourth = 0;
 
         }
 
         if (Input.GetMouseButtonDown(0) && fourth == 0)
         {
+            third = 1;
             StartCoroutine(fadeOut(2f, t2));
-            fourth = 1;
 
         }
 

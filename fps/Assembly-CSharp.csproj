@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\level2\platform_crate_fall.cs" />
      <Compile Include="Assets\Scripts\level2\platform_player_fall.cs" />
      <Compile Include="Assets\Scripts\level2\solution_level2.cs" />
+     <Compile Include="Assets\Scripts\menu\GameManager.cs" />
      <Compile Include="Assets\Scripts\menu\menu.cs" />
      <Compile Include="Assets\Scripts\player\OnFire.cs" />
      <Compile Include="Assets\Scripts\player\gunChangeColor.cs" />
