@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/level2.unity
     guid: 5beb35d413705da449badd3c5b54bb62
   - enabled: 1
+    path: Assets/Scenes/levelBr.unity
+    guid: fae1c2435eab64c4f94870ee37f677e4
+  - enabled: 1
     path: Assets/Scenes/VetterLevel.unity
     guid: cda8dbcc6ec506d4481d65c4f5035dcf
   m_configObjects: {}
