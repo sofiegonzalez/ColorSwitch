@@ -14,7 +14,7 @@ public class next_level_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x <= -27)
+        if (transform.position.x <= -71)
         {
             Debug.Log("next");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
