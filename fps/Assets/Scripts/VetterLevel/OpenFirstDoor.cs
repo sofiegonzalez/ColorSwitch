@@ -5,8 +5,7 @@ using UnityEngine;
 public class OpenFirstDoor : MonoBehaviour
 {
     public GameObject plate;
-    
-    private pressurePlate p1;
+    private complexPressurePlate p1;
     private Vector3 openPos = new Vector3(-34.85479f, 15.1f, 8.260815f);
     private Vector3 closedPos = new Vector3(-34.85479f, 5.20663f, 8.260815f);
 
@@ -16,7 +15,7 @@ public class OpenFirstDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        p1 = plate.GetComponent<pressurePlate>();
+        p1 = plate.GetComponent<complexPressurePlate>();
         isMoving = false;
         isClosed = true;
     }
@@ -24,25 +23,25 @@ public class OpenFirstDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isMoving)
+        if (!isMoving) //prevents changes in door movement while already moving
         {
-            if (p1.solved)
+            if (p1.solved) // if the puzzle is solved
             {
-                if (isClosed)
+                if (isClosed) //open the door if its closed
                 {
                     Debug.Log("open");
                     isMoving = true;
                     isClosed = false;
-                    openDoor();
+                    StartCoroutine(SmoothLerp(2f, openPos));
                 }
             }
-            else
+            else //if the puzzle isnt solved
             {
-                if (!isClosed)
+                if (!isClosed) //close the door if it isnt already
                 {
                     Debug.Log("close");
                     isMoving = true;
-                    closeDoor();
+                    StartCoroutine(SmoothLerp(2f, closedPos));
                     isClosed = true;
                 }
             }
@@ -50,45 +49,21 @@ public class OpenFirstDoor : MonoBehaviour
         //Debug.Log(transform.position);
     }
 
-    void openDoor()
+    //will slowly open the door
+    private IEnumerator SmoothLerp(float time, Vector3 targetPos)
     {
+        Vector3 startingPos = transform.position;
+
         float elapsedTime = 0;
 
-        while (elapsedTime < 2f)
+        while (elapsedTime < time)
         {
-            transform.position = Vector3.Lerp(closedPos, openPos, (elapsedTime / 2f));
+            transform.position = Vector3.Lerp(startingPos, targetPos, (elapsedTime / time));
             elapsedTime += Time.deltaTime;
-        }
-
-        isMoving = false;
-    }
-
-    void closeDoor()
-    {
-        float elapsedTime = 0;
-
-        while (elapsedTime < 2f)
-        {
-            transform.position = Vector3.Lerp(openPos, closedPos, (elapsedTime / 2f));
-            elapsedTime += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
         }
 
         isMoving = false;
     }
 }
 
-//maybe use this for a smooth lerp- coroutine
-/*//move door open
-private IEnumerator SmoothLerp(float time)
-{
-    Vector3 startingPos = transform.position;
-
-    float elapsedTime = 0;
-
-    while (elapsedTime < time)
-    {
-        transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
-        elapsedTime += Time.deltaTime;
-        yield return null;
-    }
-}*/

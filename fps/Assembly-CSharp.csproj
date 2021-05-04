@@ -75,8 +75,10 @@
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
     <Compile Include="Assets\Scripts\VetterLevel\OpenFirstDoor.cs" />
     <Compile Include="Assets\Scripts\VetterLevel\PickUp.cs" />
-    <Compile Include="Assets\Scripts\VetterLevel\PlatformMovement.cs" />
+    <Compile Include="Assets\Scripts\VetterLevel\complexPressurePlate.cs" />
+    <Compile Include="Assets\Scripts\VetterLevel\cubeFell.cs" />
     <Compile Include="Assets\Scripts\VetterLevel\fell_abyss.cs" />
+    <Compile Include="Assets\Scripts\VetterLevel\openSecondDoor.cs" />
     <Compile Include="Assets\Scripts\level1\crateColorChange.cs" />
     <Compile Include="Assets\Scripts\level1\fade_in.cs" />
     <Compile Include="Assets\Scripts\level1\nextLevel1.cs" />
