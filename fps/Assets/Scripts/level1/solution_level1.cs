@@ -31,10 +31,10 @@ public class solution_level1 : MonoBehaviour
         if(c1.solved && c2.solved)
         {
             //Debug.Log("puzzle solved");
-            
+            opendoor.Play();
             GetComponent<MeshRenderer>().material = green;
             //cant get open door sound to play?
-            opendoor.Play();
+            
 
             StartCoroutine(SmoothLerp(1f));
             c1.solved = false;
