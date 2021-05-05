@@ -18,6 +18,7 @@ public class lift_blue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // continually check if cube color still matches
         if (c.solved)
         {
             StartCoroutine(SmoothLerp(1f));
@@ -25,7 +26,7 @@ public class lift_blue : MonoBehaviour
         }
     }
 
-    //move blue up
+    //move blue platform upwards (so that the player may progress)
     private IEnumerator SmoothLerp(float time)
     {
         Vector3 startingPos = transform.position;

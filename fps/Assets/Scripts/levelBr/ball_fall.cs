@@ -1,22 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class next_level : MonoBehaviour
+public class ball_fall : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z >= 118)
+        // Once the boulder falls to the end of the track, destroy it
+        if (transform.position.y <= -25)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // change game to load next level
+            Destroy(gameObject);
         }
     }
 }

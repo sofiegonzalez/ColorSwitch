@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class solve : MonoBehaviour
 {
+    // two pressure plates from puzzle rooms
     public GameObject pressure1;
     public GameObject pressure2;
-
+    // move the door up to this position
     public Vector3 finalPos;
-
     private pressurePlate c1;
     private pressurePlate c2;
+    // play sound, turn door green
     private AudioSource opendoor;
     public Material green;
 
     // Start is called before the first frame update
     void Start()
     {
-        //this puzzle has two crates
+        //this puzzle has two crates that will open the exit dorr
         c1 = pressure1.GetComponent<pressurePlate>();
         c2 = pressure2.GetComponent<pressurePlate>();
         opendoor = GetComponent<AudioSource>();
@@ -29,7 +30,6 @@ public class solve : MonoBehaviour
         if (c1.solved && c2.solved)
         {
             GetComponent<MeshRenderer>().material = green;
-            //cant get open door sound to play?
             opendoor.Play();
 
             StartCoroutine(SmoothLerp(1f));
@@ -38,7 +38,7 @@ public class solve : MonoBehaviour
         }
     }
 
-    //move door open
+    //move the door open
     private IEnumerator SmoothLerp(float time)
     {
         Vector3 startingPos = transform.position;

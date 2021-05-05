@@ -17,8 +17,10 @@ public class squish : MonoBehaviour
         
     }
 
+    // when the user touches the boulders they get "squished"
     void OnCollisionEnter(Collision col)
     {
+        // restart the level from the begining
         SceneManager.LoadScene("levelBr");
     }
 }
