@@ -16,7 +16,7 @@ public class next_level : MonoBehaviour
     {
         if (transform.position.z >= 118)
         {
-            SceneManager.LoadScene("level1"); // change to next level
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // change to next level
         }
     }
 }
