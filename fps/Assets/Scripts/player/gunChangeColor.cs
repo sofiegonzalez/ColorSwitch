@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gunChangeColor : MonoBehaviour
 {
+    //control gun color and player input
     public float targetDistance = 0.0f;
     public int allowedRange = 15;
     public Material red;
@@ -22,16 +23,12 @@ public class gunChangeColor : MonoBehaviour
         //set material to red- start color
         laser.GetComponent<MeshRenderer>().material = red;
 
-        
-
         color_change = GetComponent<AudioSource>();
-        //laser.transform.localEulerAngles = new Vector3(90, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         //right click- change color
         //continous right click circles through red -> blue -> green
         if (Input.GetMouseButtonDown(1))
@@ -41,22 +38,20 @@ public class gunChangeColor : MonoBehaviour
                 color = "blue";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = blue;
-                //Debug.Log("new color blue");
             }
             else if(color == "blue")
             {
                 color = "green";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = green;
-                //Debug.Log("new color green");
             }
             else
             {
                 color = "red";
                 //change color of laser
                 laser.GetComponent<MeshRenderer>().material = red;
-                //Debug.Log("new color red");
             }
+            //change color click sound
             color_change.Play();
         }
             

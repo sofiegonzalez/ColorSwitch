@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class crateColorChange : MonoBehaviour
 {
+    //script to change color of crate when shot at by player
     public Material start;
     public Material red;
     public Material blue;
@@ -33,13 +34,13 @@ public class crateColorChange : MonoBehaviour
         }
         else if (newColor == "red")
         {
-            
+            //change object color when shot
             GetComponent<MeshRenderer>().material = red;
             currColor = "red";
         }
         else
         {
-            
+            //change object color when shot
             GetComponent<MeshRenderer>().material = blue;
             currColor = "blue";
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class platform_crate_fall : MonoBehaviour
 {
+    //if crate not set to the same color as a platform, crate falls thorugh
     public string crate_color;
     public crateColorChange crate;
     private Collider myCollider;

@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class solution_level2 : MonoBehaviour
 {
+    //solution script for level2
     private bool solved_crate1 = false;
-    public GameObject pressure1;
 
+    //final pos, material and open sound for door
     public Vector3 finalPos;
-
-    private pressurePlate c1;
     private AudioSource opendoor;
     public Material green;
+
+    //pressure plate info
+    public GameObject pressure1;
+    private pressurePlate c1;
 
     // Start is called before the first frame update
     void Start()
@@ -24,20 +27,21 @@ public class solution_level2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if puzzle solved, open door
         if (c1.solved)
         {
-            //Debug.Log("puzzle solved");
 
             GetComponent<MeshRenderer>().material = green;
             //cant get open door sound to play?
             opendoor.Play();
-
+            //coroutuine to smoothly open door
             StartCoroutine(SmoothLerp(1f));
+            //set puzzle to false
             c1.solved = false;
         }
     }
 
-    //move door open
+    //coroutine to open door
     private IEnumerator SmoothLerp(float time)
     {
         Vector3 startingPos = transform.position;

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class platform_player_fall : MonoBehaviour
 {
+    //if player gun is not set to the same color as a platform, the player falls through
     public string crate_color;
     public gunChangeColor gun;
     private Collider myCollider;
+
     // Start is called before the first frame update
     void Start()
     {

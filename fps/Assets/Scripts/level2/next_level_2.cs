@@ -14,6 +14,7 @@ public class next_level_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if player walks through solved level door they go to next level
         if (transform.position.x <= -71)
         {
             Debug.Log("next");
