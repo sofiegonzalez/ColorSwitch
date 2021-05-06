@@ -11,7 +11,8 @@ public class OpenFirstDoor : MonoBehaviour
 
     private bool isMoving;
     private bool isClosed;
-
+    private bool doorOpen = false;
+    private AudioSource opendoor;
 
 
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class OpenFirstDoor : MonoBehaviour
         p1 = plate.GetComponent<complexPressurePlate>();
         isMoving = false;
         isClosed = true;
+        opendoor = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,22 +31,24 @@ public class OpenFirstDoor : MonoBehaviour
         {
             if (p1.solved) // if the puzzle is solved
             {
-                if (isClosed) //open the door if its closed
+                if (isClosed && doorOpen == false) //open the door if its closed
                 {
                     Debug.Log("open");
                     isMoving = true;
                     isClosed = false;
                     StartCoroutine(SmoothLerp(2f, openPos));
+                    doorOpen = true;
                 }
             }
             else //if the puzzle isnt solved
             {
-                if (!isClosed) //close the door if it isnt already
+                if (!isClosed && doorOpen == true) //close the door if it isnt already
                 {
                     Debug.Log("close");
                     isMoving = true;
                     StartCoroutine(SmoothLerp(2f, closedPos));
                     isClosed = true;
+                    doorOpen = false;
                 }
             }
         }
@@ -66,6 +70,7 @@ public class OpenFirstDoor : MonoBehaviour
         }
 
         isMoving = false;
+        opendoor.Play();
     }
 }
 
