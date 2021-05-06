@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     void Update(){
  
     if(Input.GetKeyDown("escape"))
-            SceneManager.LoadScene(0);
+            Application.Quit();
 
     }
  

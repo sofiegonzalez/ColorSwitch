@@ -1112,6 +1112,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 773441397029993692, guid: 57bb18ff7da700d4d91127bf8ba5c3ea,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1410245223477725862, guid: 57bb18ff7da700d4d91127bf8ba5c3ea,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1191,6 +1196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909505248242535745, guid: 57bb18ff7da700d4d91127bf8ba5c3ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57bb18ff7da700d4d91127bf8ba5c3ea, type: 3}

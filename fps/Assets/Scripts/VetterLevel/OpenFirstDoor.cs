@@ -12,6 +12,8 @@ public class OpenFirstDoor : MonoBehaviour
     private bool isMoving;
     private bool isClosed;
 
+
+
     // Start is called before the first frame update
     void Start()
     {

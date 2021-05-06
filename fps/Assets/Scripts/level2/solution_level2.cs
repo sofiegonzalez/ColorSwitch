@@ -16,6 +16,8 @@ public class solution_level2 : MonoBehaviour
     public GameObject pressure1;
     private pressurePlate c1;
 
+    private bool doorOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +30,16 @@ public class solution_level2 : MonoBehaviour
     void Update()
     {
         //if puzzle solved, open door
-        if (c1.solved)
+        if (c1.solved && doorOpen == false)
         {
 
             GetComponent<MeshRenderer>().material = green;
-            //cant get open door sound to play?
-            opendoor.Play();
+
             //coroutuine to smoothly open door
             StartCoroutine(SmoothLerp(1f));
             //set puzzle to false
             c1.solved = false;
+            doorOpen = true;
         }
     }
 
@@ -54,5 +56,7 @@ public class solution_level2 : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        
+        opendoor.Play();
     }
 }

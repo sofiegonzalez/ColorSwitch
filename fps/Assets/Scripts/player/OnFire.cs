@@ -18,7 +18,7 @@ public class OnFire : MonoBehaviour
             AudioSource gunsound = GetComponent<AudioSource>();
             gunsound.Play();
             //gun animation recoil
-            //GetComponent<Animation>().Play("shoot");
+            GetComponent<Animation>().Play("shoot");
         }
     }
 

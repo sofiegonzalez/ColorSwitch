@@ -53,6 +53,7 @@ public class gunChangeColor : MonoBehaviour
             }
             //change color click sound
             color_change.Play();
+            
         }
             
         //left click- fire gun
@@ -60,7 +61,7 @@ public class gunChangeColor : MonoBehaviour
         {
             //use raycasting to determine user distance from objects in scene
             RaycastHit shot;
-            if( Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot))
+            if ( Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out shot))
             {
                 targetDistance = shot.distance;
                 if(targetDistance < allowedRange)

@@ -9,6 +9,10 @@ public class openSecondDoor : MonoBehaviour
     private complexPressurePlate p1;
     private complexPressurePlate p2;
 
+    private AudioSource opendoor;
+
+    private bool doorOpen = false;
+
     Vector3 finalpos = new Vector3(0.921f, 8f, -193.43f);
 
     // Start is called before the first frame update
@@ -16,15 +20,17 @@ public class openSecondDoor : MonoBehaviour
     {
         p1 = plate1.GetComponent<complexPressurePlate>();
         p2 = plate2.GetComponent<complexPressurePlate>();
+        opendoor = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //if both pressure plates are solved then open the door
-        if(p1.solved && p2.solved)
+        if(p1.solved && p2.solved && doorOpen == false)
         {
             StartCoroutine(SmoothLerp(2f, finalpos));
+            doorOpen = true;
         }
     }
 
@@ -41,5 +47,7 @@ public class openSecondDoor : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
+
+        opendoor.Play();
     }
 }

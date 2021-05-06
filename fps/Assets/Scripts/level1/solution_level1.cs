@@ -17,6 +17,9 @@ public class solution_level1 : MonoBehaviour
     private AudioSource opendoor;
     public Material green;
 
+    private bool doorOpen = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,18 +34,22 @@ public class solution_level1 : MonoBehaviour
     void Update()
     {
         //if both pressure plates have cubes with matching colors on them
-        if(c1.solved && c2.solved)
+        if(c1.solved && c2.solved && doorOpen == false)
         {
 
             //puzzle solved, open door and play sound
             GetComponent<MeshRenderer>().material = green;
             opendoor.Play();
+
             //open door to next level coroutine
             StartCoroutine(SmoothLerp(1f));
             //set solved to false
             c1.solved = false;
             c2.solved = false;
+            opendoor.Play();
+            doorOpen = true;
         }
+
     }
 
     //coroutine to open door
@@ -59,5 +66,6 @@ public class solution_level1 : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        opendoor.Play();
     }
 }

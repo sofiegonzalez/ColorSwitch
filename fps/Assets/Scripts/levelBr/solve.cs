@@ -15,6 +15,8 @@ public class solve : MonoBehaviour
     private AudioSource opendoor;
     public Material green;
 
+    private bool doorOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class solve : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (c1.solved && c2.solved)
+        if (c1.solved && c2.solved && doorOpen == false)
         {
             GetComponent<MeshRenderer>().material = green;
             opendoor.Play();
@@ -35,6 +37,7 @@ public class solve : MonoBehaviour
             StartCoroutine(SmoothLerp(1f));
             c1.solved = false;
             c2.solved = false;
+            doorOpen = true;
         }
     }
 
@@ -51,5 +54,7 @@ public class solve : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        opendoor.Play();
     }
 }
