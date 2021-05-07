@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class solution_level1 : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class solution_level1 : MonoBehaviour
     public Vector3 finalPos;
     private AudioSource opendoor;
     public Material green;
+    public Text text;
 
     private bool doorOpen = false;
 
@@ -48,6 +50,7 @@ public class solution_level1 : MonoBehaviour
             c2.solved = false;
             opendoor.Play();
             doorOpen = true;
+            text.enabled = true;
         }
 
     }
